@@ -273,8 +273,8 @@ h1, h2, h3, h4, h5, h6, figure {
 			background-position: center center;
 			background-repeat: no-repeat;
 			position: relative;
-			height: 200px;
-			width: 200px;
+			height: 300px;
+			width: 300px;
 			margin: 0 auto;
 			margin-bottom: 30px;
 			// border: 1px solid rgba($brand-white,1);
@@ -293,6 +293,58 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
+/* animation */
+$ease: cubic-bezier(.47,.01,0,1.01);
+.animate1 {
+  position: fixed;
+  top:0;right:0;bottom:0;left:0;
+}
+
+span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(calc(-50% - 12px),calc(-50% + 12px),0);
+
+  mix-blend-mode: screen;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0px 0px white, 
+            0px 0px white, 
+            0px 0px white,            
+            0px 0px white, 
+            0px 0px white,
+            0px 0px white,
+            0px 0px white,
+            0px 0px white,
+            0px 0px white,
+            0px 0px white,
+            0px 0px white;
+  opacity:0;
+  animation: revolve 8s $ease forwards 0.25s; 
+  
+  @keyframes revolve {
+    to{
+      opacity:1;
+       transform: translate3d(-50%,-50%,0);
+      text-shadow: -2px 1px white, 
+          -3px 2px white, 
+          -4px 3px white,            
+          -5px 4px white, 
+          -6px 5px white,
+          -7px 6px white,
+          -8px 7px white,
+          -9px 8px white,
+          -10px 9px white,
+          -11px 10px white,
+          -12px 11px white;
+    }
+  }
+}
+
+/* animation */
 
 #fh5co-features {
 	background: $brand-primary;
@@ -397,14 +449,14 @@ h1, h2, h3, h4, h5, h6, figure {
 			padding-top: 0;
 		}
 		.first-block{
-			width: 40%;
+			width: 30%;
 			display: inline-block;
 			float: left;
 			color: $brand-black;
 			font-weight: bold;
 		}
 		.second-block{
-			width: 60%;
+			width: 70%;
 			display: inline-block;
 			color: rgba($brand-black,.5);
 		}
